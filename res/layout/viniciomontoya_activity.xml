@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/viniciobg">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="53dp"
+        android:src="@drawable/vinicio" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="45dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="Vinicio Montoya"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="29dp"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Vinicio Montoya, un dentista Guatemalteco que a servido a su nacion y a vicitado mucho rinco-nes del planeta desde 1997 considerado &apos;Un deportista extremo&apos; y para muchoses un Heroe Nacional. Entre uno de sus logros mas destacados, la participacion en la Expedicion al Monte Everest en 2004(al igual que &apos;Jaime Viñals&apos; otro guatemalteco destacado por escalar los volcanes de Centroamerica, nevados de Mexico y Cordillera de los Andes. Ademas escalo Los Alpes, Caucaso, Himalayas, Surdinam, Alaska, Alpes Australianos y Africa)."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#1ea1d2"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_marginLeft="32dp"
+        android:src="@drawable/viniciotw" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_below="@+id/textView2"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/viniciofb" />
+   
+</RelativeLayout>
