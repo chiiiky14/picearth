@@ -6,10 +6,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.touch.db.DataBase;
 
 
 public class TouchImageViewActivity extends Activity {
@@ -17,6 +20,9 @@ public class TouchImageViewActivity extends Activity {
 	Button btnTwitter, btnFacebook;
 	String url = "http://www.edmlounge.com/storage/heisenberg.png?__SQUARESPACE_CACHEVERSION=1360440540556";
 	boolean facebookAppFound;
+	DataBase entrada;
+	SQLiteDatabase bd;
+	
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,10 @@ public class TouchImageViewActivity extends Activity {
         setContentView(R.layout.main);
         TouchImageView img = (TouchImageView) findViewById(R.id.img);
         img.setMaxZoom(4);
+        
+        entrada = new DataBase(TouchImageViewActivity.this);
+        bd = entrada.getWritableDatabase();
+        
         
         btnTwitter = (Button) findViewById(R.id.btnTwitter); 
         btnTwitter.setOnClickListener(new Button.OnClickListener()
