@@ -2,19 +2,24 @@ package com.example.touch;
  
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.touch.db.DataBase;
 import com.example.touch.ws.PicearthGetLogin;
-import com.example.touch.ws.PicearthPostRegistro;
 
 
 public class PruebaConsumos extends Activity {
     /** Called when the activity is first created. */
 	PicearthGetLogin getLogin;
 	String name, lastname, mail, nationality, Password;
+	String wsName, wsMail, wsToken;
+	DataBase entrada;
+	SQLiteDatabase bd;
 	EditText etSugerencia;
 	String stSugerencia;
 	int error;
@@ -78,6 +83,22 @@ public class PruebaConsumos extends Activity {
 			 
 			 if (error==0) {
 				Toast.makeText(PruebaConsumos.this, "done", Toast.LENGTH_SHORT).show();
+				wsName = getLogin.name;
+				wsMail = getLogin.mail;
+				wsToken= getLogin.token;
+				
+				Toast.makeText(PruebaConsumos.this, "data: "+wsName+", "+wsMail+", "+wsToken, Toast.LENGTH_SHORT).show();
+				/*  base de datos // INSERT  */
+                entrada = new DataBase(PruebaConsumos.this);
+        		bd = entrada.getWritableDatabase();
+
+        		ContentValues registro = new ContentValues();
+				
+				registro.put("name", wsName);
+				registro.put("email", wsMail);
+				registro.put("token", wsToken); 
+				bd.insert("USUARIO", null, registro);
+				
 			} else {
 				Toast.makeText(PruebaConsumos.this, "fail", Toast.LENGTH_SHORT).show();
 			}

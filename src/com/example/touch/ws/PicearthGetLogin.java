@@ -21,7 +21,7 @@ import org.json.JSONObject;
 
 public class PicearthGetLogin {
 
-	public String idperfil, estado, username, lerrorMessage, token;
+	public String idperfil, estado, username, lerrorMessage, token, name, mail;
 	public int lerrorCode;
 
 	public void login(String correo, String contrasena)
@@ -64,9 +64,9 @@ public class PicearthGetLogin {
 			lerrorCode				= jsonObject.getInt("errorCode");
 			if (lerrorCode == 0) {
 				JSONObject nom 	= jsonObject.getJSONObject("response");
-				idperfil		= nom.getString("name");
-				estado			= nom.getString("mail");
-				username 		= nom.getString("token"); 
+				name		= nom.getString("name");
+				mail			= nom.getString("mail");
+				token 		= nom.getString("token"); 
 
 			}
 
