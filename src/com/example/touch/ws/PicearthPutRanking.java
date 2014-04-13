@@ -27,7 +27,7 @@ public class PicearthPutRanking {
 	int result;
 	String hashkey,idlista, notificacion; 
 	
-	public void PuttAlerta(String id, String token, String ranking){
+	public void PutAlerta(String id, String token, String ranking){
 		
 		try {
 						

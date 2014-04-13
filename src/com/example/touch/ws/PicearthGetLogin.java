@@ -27,9 +27,9 @@ public class PicearthGetLogin {
 	BufferedReader in = null;
 	String url = "";
 	
-	public Vector<Long> IdCategoria = new Vector<Long>();
-	public Vector<String> Categoria = new Vector<String>();
-	public Vector<String> ImagenUrl = new Vector<String>();
+	public Vector<String> name 	= new Vector<String>();
+	public Vector<String> email = new Vector<String>();
+	public Vector<String> token = new Vector<String>();
 	
 	public int result;
 	
@@ -59,21 +59,21 @@ public class PicearthGetLogin {
 			int error = msgJson.getInt("errorCode");
 			if(error == 0){
 				
-				Object intervention = msgJson.get("msg");
+				/*Object intervention = msgJson.get("msg");
 				if (intervention instanceof JSONObject) {
 					JSONObject Json = msgJson.getJSONObject("msg");
-					IdCategoria.addElement(Json.getLong("idCategoria"));
-					Categoria.addElement(Json.getString("categoria"));
-					ImagenUrl.addElement(Json.getString("imageUrl"));
+					name	.addElement(Json.getString("name"));
+					email	.addElement(Json.getString("email"));
+					token	.addElement(Json.getString("token"));
 				}else if (intervention instanceof JSONArray){
 					JSONArray ListaCategoriasJson = msgJson.getJSONArray("msg");
 					for (int i = 0; i < ListaCategoriasJson.length(); i++) {
 						JSONObject json_data = ListaCategoriasJson.getJSONObject(i);
-						IdCategoria.addElement(json_data.getLong("idCategoria"));
-						Categoria.addElement(json_data.getString("categoria"));
-						ImagenUrl.addElement(json_data.getString("imageUrl"));
+						name		.addElement(json_data.getString("name"));
+						email		.addElement(json_data.getString("email"));
+						token		.addElement(json_data.getString("token"));
 					}
-				}
+				}*/
 				result = 0;
 				
 			}else if(error == 1){

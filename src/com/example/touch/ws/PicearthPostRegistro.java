@@ -25,7 +25,7 @@ import android.util.Log;
 public class PicearthPostRegistro {
 	
 	BufferedReader in = null;
-	String url = "http://observatoriodeprecios.defensoria.gob.sv/ApiREST.php/v1/postGuardarEstablecimientosLista";
+	String url = "http://epicearth.buzzcoapp.com/epicearthApiREST/v1/postregister";
 	public int result;
 	long idMiembro;
 	
@@ -64,7 +64,7 @@ public class PicearthPostRegistro {
 		in.close();
 		String page = sb.toString();
 		Log.i("PAGE", ""+page);
-		JSONObject jsonObject = new JSONObject(page);
+		/*JSONObject jsonObject = new JSONObject(page);
 		JSONObject msgJson = jsonObject.getJSONObject("response");
 		int error = msgJson.getInt("errorCode");		
 		if(error == 0){ 
@@ -85,7 +85,7 @@ public class PicearthPostRegistro {
 			result = 7;
 		}else if(error == 8){
 			result = 8;
-		}
+		}*/
 		
 		
 		} catch (UnsupportedEncodingException e) {
