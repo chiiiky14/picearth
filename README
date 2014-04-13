@@ -1,0 +1,57 @@
+Android: TouchImageView
+Created by: Mike Ortiz
+Contributions by: 
+ * Patrick Lackemacher
+ * Babay88
+ * @ipsilondev
+
+Date: 2/17/2012
+----------------------
+Adds panning, pinch zoom, double tap zoom, and fling to Android ImageView.
+
+Usage:
+----------------------
+Place TouchImageView.java in your project. It can then be used the same as
+ImageView. Example:
+
+TouchImageView img = (TouchImageView) findViewById(R.id.img);
+
+If you are using TouchImageView in xml, then you must provide the full package
+name, because it is a custom view. Example:
+
+<com.example.touch.TouchImageView
+	    android:id="@+id/img”
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" />
+
+API:
+----------------------
+
+// Get the current zoom. This is the zoom relative to the initial
+// scale, not the original resource.
+float getCurrentZoom();
+
+// For a given point on the view (ie, a touch event), returns the
+// point relative to the original drawable's coordinate system.
+PointF getDrawablePointFromTouchPoint(float x, float y);
+
+// For a given point on the view (ie, a touch event), returns the
+// point relative to the original drawable's coordinate system.
+PointF getDrawablePointFromTouchPoint(PointF p);
+
+// Get the max zoom multiplier.
+float getMaxZoom();
+
+// Get the min zoom multiplier.
+float getMinZoom();
+
+// After setting image, a value of true means the new image should maintain
+// the zoom of the previous image. False means the image should be resized 
+// within the view. Default value is true.
+void maintainZoomAfterSetImage(boolean maintainZoom); 
+
+// Set the max zoom multiplier. Default value: 3.
+void setMaxZoom(float max);
+
+// Set the min zoom multiplier. Default value: 1.
+void setMinZoom(float min);
